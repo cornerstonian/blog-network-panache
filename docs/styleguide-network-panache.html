@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style Guide — Network Panache</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Barlow+Condensed:wght@400;600;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:        #0a0c10;
+      --surface:   #0f1117;
+      --surface2:  #161b22;
+      --border:    #1e2330;
+      --border-hi: #2e3a50;
+      --text:      #c9d1d9;
+      --muted:     #6a737d;
+      --white:     #f0f6fc;
+      --gold:      #d4a843;
+      --gold-dim:  #a07830;
+      --green:     #3fb950;
+      --green-dim: #2d8a3e;
+      --cyan:      #58a6ff;
+      --purple:    #bc8cff;
+      --red:       #f85149;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .wrapper { max-width: 900px; margin: 0 auto; }
+
+    /* Header */
+    .sg-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .sg-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      top: -3rem;
+    }
+
+    .sg-site-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .sg-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+
+    .sg-title span { color: var(--gold); }
+
+    .sg-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    .sg-section { margin-bottom: 3rem; }
+
+    .sg-section-title {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Color swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .swatch {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .swatch-color { height: 64px; width: 100%; }
+
+    .swatch-info {
+      background: var(--surface);
+      padding: 0.5rem 0.75rem;
+    }
+
+    .swatch-name { font-size: 11px; font-weight: 500; color: var(--white); margin-bottom: 2px; }
+    .swatch-hex  { font-size: 10px; color: var(--gold); font-family: 'JetBrains Mono', monospace; }
+    .swatch-role { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+    /* Type specimens */
+    .type-specimen {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .type-meta {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .sample-barlow-hero {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .sample-barlow-h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .sample-syne {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .sample-syne-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    .sample-mono-body {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .sample-mono-small {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Tables */
+    .sg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .sg-table th {
+      background: var(--surface2);
+      color: var(--muted);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sg-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    .sg-table tr:last-child td { border-bottom: none; }
+    .sg-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .mono { font-family: 'JetBrains Mono', monospace; color: var(--cyan); }
+
+    /* Badge samples */
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .badge {
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-gold   { background: rgba(212,168,67,0.12); border-color: var(--gold-dim); color: var(--gold); }
+    .badge-green  { background: rgba(63,185,80,0.1);   border-color: var(--green-dim); color: var(--green); }
+    .badge-cyan   { background: rgba(88,166,255,0.1);  border-color: #1d4e8f; color: var(--cyan); }
+    .badge-purple { background: rgba(188,140,255,0.1); border-color: #6e40c9; color: var(--purple); }
+    .badge-muted  { background: rgba(110,118,129,0.1); border-color: #30363d; color: var(--muted); }
+
+    /* Callout samples */
+    .callout {
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.75rem;
+      font-size: 12px;
+      align-items: flex-start;
+    }
+
+    .callout-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .callout-info    { background: rgba(88,166,255,0.07);  border: 1px solid #1d4e8f; }
+    .callout-warn    { background: rgba(212,168,67,0.07);  border: 1px solid var(--gold-dim); }
+    .callout-danger  { background: rgba(248,81,73,0.07);   border: 1px solid #6e2020; }
+    .callout-success { background: rgba(63,185,80,0.07);   border: 1px solid var(--green-dim); }
+
+    .callout-info .callout-icon    { color: var(--cyan); }
+    .callout-warn .callout-icon    { color: var(--gold); }
+    .callout-danger .callout-icon  { color: var(--red); }
+    .callout-success .callout-icon { color: var(--green); }
+
+    .callout strong {
+      display: block;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
+    }
+
+    .callout-info strong    { color: var(--cyan); }
+    .callout-warn strong    { color: var(--gold); }
+    .callout-danger strong  { color: var(--red); }
+    .callout-success strong { color: var(--green); }
+
+    /* Code block sample */
+    .code-block {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      font-size: 12px;
+      margin-bottom: 0.5rem;
+    }
+
+    .code-header {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-lang { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .code-body {
+      background: #0d1117;
+      padding: 1rem 1.25rem;
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 12px;
+    }
+
+    /* Spacing */
+    .spacing-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+    .spacing-label { font-size: 11px; color: var(--muted); min-width: 150px; }
+    .spacing-bar-wrap { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 2px; height: 18px; overflow: hidden; }
+    .spacing-bar { height: 100%; background: var(--gold); opacity: 0.5; }
+
+    /* Component grid */
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .comp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; }
+    .comp-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+
+    /* Repo bar sample */
+    .repo-bar {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px 4px 0 0;
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .dot-r { background: var(--red); }
+    .dot-y { background: var(--gold); }
+    .dot-g { background: var(--green); }
+    .repo-path { margin-left: 0.5rem; }
+    .repo-path span { color: var(--text); }
+
+    .repo-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      padding: 1rem;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Topbar sample */
+    .topbar-sample {
+      background: rgba(10,12,16,0.95);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0 1rem;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    .topbar-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
+    .topbar-links { display: flex; gap: 1.25rem; list-style: none; }
+    .topbar-links a { color: var(--muted); text-decoration: none; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    @media (max-width: 600px) {
+      .color-grid { grid-template-columns: repeat(2, 1fr); }
+      .comp-grid { grid-template-columns: 1fr; }
+      .sg-title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="sg-header">
+    <div class="sg-site-label">// Style Guide</div>
+    <h1 class="sg-title">Network <span>Panache</span></h1>
+    <p class="sg-subtitle">blog.lavoisier.dev · React + Vite · Deployed on Vercel · Stack: Barlow Condensed / Syne / JetBrains Mono</p>
+  </div>
+
+  <!-- COLORS -->
+  <div class="sg-section">
+    <div class="sg-section-title">Color Palette</div>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#0a0c10"></div><div class="swatch-info"><div class="swatch-name">BG</div><div class="swatch-hex">#0a0c10</div><div class="swatch-role">Page background</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0f1117"></div><div class="swatch-info"><div class="swatch-name">Surface</div><div class="swatch-hex">#0f1117</div><div class="swatch-role">Cards, panels</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#161b22"></div><div class="swatch-info"><div class="swatch-name">Surface 2</div><div class="swatch-hex">#161b22</div><div class="swatch-role">Code headers, nav bg</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1e2330"></div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#1e2330</div><div class="swatch-role">Default borders</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2e3a50"></div><div class="swatch-info"><div class="swatch-name">Border Hi</div><div class="swatch-hex">#2e3a50</div><div class="swatch-role">Hover borders</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#c9d1d9"></div><div class="swatch-info"><div class="swatch-name">Text</div><div class="swatch-hex">#c9d1d9</div><div class="swatch-role">Body text</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#6a737d"></div><div class="swatch-info"><div class="swatch-name">Muted</div><div class="swatch-hex">#6a737d</div><div class="swatch-role">Secondary text</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#f0f6fc"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#f0f6fc</div><div class="swatch-role">Headings on dark</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#d4a843"></div><div class="swatch-info"><div class="swatch-name">Gold</div><div class="swatch-hex">#d4a843</div><div class="swatch-role">Primary accent</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#a07830"></div><div class="swatch-info"><div class="swatch-name">Gold Dim</div><div class="swatch-hex">#a07830</div><div class="swatch-role">Borders, dim accents</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#3fb950"></div><div class="swatch-info"><div class="swatch-name">Green</div><div class="swatch-hex">#3fb950</div><div class="swatch-role">Success, terminal out</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#58a6ff"></div><div class="swatch-info"><div class="swatch-name">Cyan</div><div class="swatch-hex">#58a6ff</div><div class="swatch-role">Links, info, h3</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#bc8cff"></div><div class="swatch-info"><div class="swatch-name">Purple</div><div class="swatch-hex">#bc8cff</div><div class="swatch-role">Badges, syntax kw</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#f85149"></div><div class="swatch-info"><div class="swatch-name">Red</div><div class="swatch-hex">#f85149</div><div class="swatch-role">Danger, errors</div></div></div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="sg-section">
+    <div class="sg-section-title">Typography</div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Barlow Condensed · 700 · uppercase · tracking 0.03em · Blog title / Post title hero</div>
+      <div class="sample-barlow-hero">Network Panache</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Barlow Condensed · 700 · uppercase · Post card titles / Section headers</div>
+      <div class="sample-barlow-h2">Packet Analysis Deep Dive</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Syne · 700 · Section H2 headings inside posts</div>
+      <div class="sample-syne">Overview & Objectives</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Syne · 600 · uppercase · tracking 0.12em · Section numbers, TOC label, callout headings</div>
+      <div class="sample-syne-label">▸ Contents · // technical blog</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">JetBrains Mono · 400 · 13.5px · Body copy, descriptions, post text</div>
+      <div class="sample-mono-body">Passive traffic analysis on a local network segment using Wireshark and tcpdump. The goal is to understand what an attacker — or a security analyst — can observe without sending a single packet.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">JetBrains Mono · 400–500 · 10–11px · uppercase · Labels, nav, meta, badges</div>
+      <div class="sample-mono-small">// network panache · EP 01 · ~12 min read</div>
+    </div>
+
+    <br/>
+    <table class="sg-table">
+      <thead>
+        <tr><th>Element</th><th>Font</th><th>Weight</th><th>Size</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Blog Title Hero</td><td class="mono">Barlow Condensed</td><td>700</td><td>clamp(2.5rem, 7vw, 4rem)</td><td>Uppercase, tracking 0.03em</td></tr>
+        <tr><td>Post Title</td><td class="mono">Barlow Condensed</td><td>700</td><td>clamp(1.6rem, 4vw, 2.4rem)</td><td>Uppercase</td></tr>
+        <tr><td>Card Title</td><td class="mono">Barlow Condensed</td><td>700</td><td>1.3rem</td><td>Uppercase</td></tr>
+        <tr><td>Section H2</td><td class="mono">Syne</td><td>700</td><td>1.1rem</td><td>Color: #f0f6fc</td></tr>
+        <tr><td>Section H3</td><td class="mono">Syne</td><td>600</td><td>0.95rem</td><td>Color: #58a6ff (cyan)</td></tr>
+        <tr><td>TOC / Label</td><td class="mono">Syne</td><td>600</td><td>11px</td><td>Uppercase, tracking 0.12em, gold</td></tr>
+        <tr><td>Body Text</td><td class="mono">JetBrains Mono</td><td>400</td><td>13.5px</td><td>Line-height 1.8</td></tr>
+        <tr><td>Meta / Nav</td><td class="mono">JetBrains Mono</td><td>400</td><td>10–11px</td><td>Uppercase, tracking 0.08–0.15em</td></tr>
+        <tr><td>Code</td><td class="mono">JetBrains Mono</td><td>400</td><td>12–12.5px</td><td>Line-height 1.6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BADGES -->
+  <div class="sg-section">
+    <div class="sg-section-title">Badges</div>
+    <div class="sg-section" style="background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1.25rem;margin-bottom:0">
+      <div class="badge-row">
+        <span class="badge badge-gold">CCNA</span>
+        <span class="badge badge-green">Network Security</span>
+        <span class="badge badge-cyan">Wireshark</span>
+        <span class="badge badge-purple">Lab Walkthrough</span>
+        <span class="badge badge-muted">~12 min read</span>
+      </div>
+      <br/>
+      <table class="sg-table" style="margin-top:0.5rem">
+        <thead><tr><th>Variant</th><th>BG</th><th>Border</th><th>Text</th><th>Use for</th></tr></thead>
+        <tbody>
+          <tr><td>Gold</td><td class="mono">rgba(212,168,67,0.12)</td><td class="mono">#a07830</td><td class="mono">#d4a843</td><td>CCNA, primary category</td></tr>
+          <tr><td>Green</td><td class="mono">rgba(63,185,80,0.10)</td><td class="mono">#2d8a3e</td><td class="mono">#3fb950</td><td>Security, success topics</td></tr>
+          <tr><td>Cyan</td><td class="mono">rgba(88,166,255,0.10)</td><td class="mono">#1d4e8f</td><td class="mono">#58a6ff</td><td>Tools, technical</td></tr>
+          <tr><td>Purple</td><td class="mono">rgba(188,140,255,0.10)</td><td class="mono">#6e40c9</td><td class="mono">#bc8cff</td><td>Format types</td></tr>
+          <tr><td>Muted</td><td class="mono">rgba(110,118,129,0.10)</td><td class="mono">#30363d</td><td class="mono">#6a737d</td><td>Read time, misc</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CALLOUTS -->
+  <div class="sg-section">
+    <div class="sg-section-title">Callout Boxes</div>
+    <div class="callout callout-info"><span class="callout-icon">ℹ</span><div><strong>Info</strong>Border: #1d4e8f · Icon: #58a6ff (cyan) · Use for CCNA exam notes, tips</div></div>
+    <div class="callout callout-warn"><span class="callout-icon">⚠</span><div><strong>Warning</strong>Border: #a07830 · Icon: #d4a843 (gold) · Use for legal notices, cautions</div></div>
+    <div class="callout callout-danger"><span class="callout-icon">✕</span><div><strong>Danger</strong>Border: #6e2020 · Icon: #f85149 (red) · Use for security findings</div></div>
+    <div class="callout callout-success"><span class="callout-icon">✓</span><div><strong>Success</strong>Border: #2d8a3e · Icon: #3fb950 (green) · Use for mitigations, fixes</div></div>
+  </div>
+
+  <!-- CODE BLOCK -->
+  <div class="sg-section">
+    <div class="sg-section-title">Code Block</div>
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-lang">bash</span>
+        <span style="font-size:10px;color:var(--muted);border:1px solid var(--border);padding:1px 7px;border-radius:3px;">Copy</span>
+      </div>
+      <div class="code-body">
+        # BG: #0d1117 · Text: #c9d1d9<br/>
+        # Header bar: #161b22<br/>
+        tcpdump -i eth0 -w capture.pcap 'tcp port 80'
+      </div>
+    </div>
+
+    <!-- Repo bar -->
+    <div style="margin-top:1rem">
+      <div class="repo-bar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="repo-path">blog.lavoisier.dev / <span>post-slug.md</span></span>
+      </div>
+      <div class="repo-body">Post header chrome — mimics GitHub repo style · BG: #161b22</div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="sg-section">
+    <div class="sg-section-title">Components</div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-label">Topbar</div>
+        <div class="topbar-sample">
+          <span class="topbar-brand">← lavoisier.dev</span>
+          <ul class="topbar-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Command Center</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-label">Border Radius</div>
+        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+          <div style="width:40px;height:40px;background:var(--surface2);border:1px solid var(--border);border-radius:4px"></div>
+          <span style="font-size:11px;color:var(--muted)">4px — Cards</span>
+          <div style="width:40px;height:40px;background:var(--surface2);border:1px solid var(--border);border-radius:20px"></div>
+          <span style="font-size:11px;color:var(--muted)">20px — Badges</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPACING -->
+  <div class="sg-section">
+    <div class="sg-section-title">Spacing Scale</div>
+    <div class="spacing-row"><div class="spacing-label">4px — xs</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:4px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">8px — sm</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:8px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">16px — md</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:16px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">24px — lg</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:24px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">32px — xl</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:32px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">48px — 2xl · Section gap</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:48px"></div></div></div>
+    <div class="spacing-row"><div class="spacing-label">96px — 3xl · Page padding</div><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:96px"></div></div></div>
+  </div>
+
+  <!-- DEPLOYMENT -->
+  <div class="sg-section">
+    <div class="sg-section-title">Deployment & Tech</div>
+    <table class="sg-table">
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Framework</td><td class="mono">React 18 + Vite</td></tr>
+        <tr><td>Styling</td><td class="mono">CSS Modules</td></tr>
+        <tr><td>Routing</td><td class="mono">react-router-dom · / and /post/:slug</td></tr>
+        <tr><td>Content</td><td class="mono">Hardcoded in src/data/posts.js</td></tr>
+        <tr><td>Hosting</td><td class="mono">Vercel (Production)</td></tr>
+        <tr><td>DNS</td><td class="mono">Cloudflare — DNS only (grey cloud)</td></tr>
+        <tr><td>Domain</td><td class="mono">blog.lavoisier.dev</td></tr>
+        <tr><td>Repo</td><td class="mono">cornerstonian/blog-network-panache</td></tr>
+        <tr><td>Deploy trigger</td><td class="mono">git push origin master → auto-deploy ~30s</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>
