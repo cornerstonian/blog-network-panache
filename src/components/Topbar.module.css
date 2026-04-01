@@ -1,0 +1,48 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,12,16,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.brand:hover { opacity: 0.75; }
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav a:hover { color: var(--text); }
+
+@media (max-width: 480px) {
+  .topbar { padding: 0 1rem; }
+  .nav { gap: 1rem; }
+}
