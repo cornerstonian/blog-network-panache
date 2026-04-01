@@ -13,7 +13,7 @@ export default function BlogIndex() {
 
         <header className={styles.header}>
           <div className={styles.headerMeta}>
-            <span className={styles.headerLabel}>// network panache</span>
+            <span className={styles.headerLabel}>// technical blog</span>
           </div>
           <h1 className={styles.title}>Network Panache</h1>
           <p className={styles.subtitle}>
