@@ -26,6 +26,11 @@ export const posts = [
             text: 'Most people studying for the CCNA use Packet Tracer or GNS3. Those are solid tools. But there is something different about plugging a console cable into a real Cisco 2600 router, watching IOS boot from NVRAM, and knowing that the traffic you are troubleshooting is actual electrons moving through actual hardware.',
           },
           {
+            type: 'image',
+            src: '/homelab-setup.jpg',
+            alt: 'Physical CCNA homelab setup — Cisco 2600, Catalyst 3500XL, Raspberry Pi, and MacBook Pro 2015',
+          },
+          {
             type: 'p',
             text: 'That is why I built this lab. Not because simulators are wrong — they are not — but because physical gear forces you to deal with real constraints: IOS version limitations, cable management, interface states that do not behave the way the documentation says they should. Those friction points are the curriculum the exam doesn\'t cover.',
           },
@@ -108,6 +113,11 @@ export const posts = [
               { type: 'out', text: '   ↓' },
               { type: 'out', text: 'Lab Endpoints (Raspberry Pi, additional hosts)' },
             ],
+          },
+          {
+            type: 'image',
+            src: '/homelab-topology.png',
+            alt: 'Secure CCNA Lab Integration — network topology diagram',
           },
           {
             type: 'p',
