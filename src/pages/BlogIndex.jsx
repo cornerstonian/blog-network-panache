@@ -23,7 +23,7 @@ export default function BlogIndex() {
         </header>
 
         <div className={styles.postList}>
-          {posts.map((post) => (
+          {posts.filter((post) => !post.hidden).map((post) => (
             <Link to={`/post/${post.slug}`} key={post.slug} className={styles.postCard}>
               <div className={styles.cardTop}>
                 <div className={styles.badgeRow}>
