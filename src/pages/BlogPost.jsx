@@ -79,6 +79,16 @@ function RenderContent({ blocks }) {
           </div>
         )
 
+      case 'image':
+        return (
+          <img
+            key={i}
+            src={block.src}
+            alt={block.alt || ''}
+            style={{ width: '100%', borderRadius: '6px', marginBottom: '1.5rem' }}
+          />
+        )
+
       default:
         return null
     }
