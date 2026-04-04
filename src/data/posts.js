@@ -27,7 +27,7 @@ export const posts = [
           },
           {
             type: 'p',
-            text: 'That is why I built this lab. Not because simulators are wrong — they are not — but because physical gear forces you to deal with real constraints: IOS version limitations, cable management, interface states that do not behave the way the documentation says they should. Those friction points are the curriculum the exam doesn't cover.',
+            text: 'That is why I built this lab. Not because simulators are wrong — they are not — but because physical gear forces you to deal with real constraints: IOS version limitations, cable management, interface states that do not behave the way the documentation says they should. Those friction points are the curriculum the exam doesn\'t cover.',
           },
           {
             type: 'callout',
