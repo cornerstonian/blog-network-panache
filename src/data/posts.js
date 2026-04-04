@@ -46,7 +46,7 @@ export const posts = [
             type: 'table',
             headers: ['Component', 'Tool / Device', 'Role'],
             rows: [
-              ['Capture Host',   'Dell Latitude 7480 (Kali Linux)', 'Analyst machine'],
+              ['Capture Host',   'MacBook Pro 2015 (macOS Monterey 12.7.6)', 'Analyst machine'],
               ['Target Traffic', 'Cisco 2600 Router',               'Traffic generator'],
               ['Capture Tool',   'Wireshark 4.x / tcpdump',         'Passive sniffer'],
               ['Switch',         'Catalyst 3500XL',                  'Port mirror (SPAN)'],
@@ -63,10 +63,10 @@ export const posts = [
           {
             type: 'terminal',
             lines: [
-              { type: 'prompt', text: '$ ip link set eth0 promisc on' },
-              { type: 'prompt', text: '$ ip link show eth0' },
-              { type: 'out',    text: '2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500' },
-              { type: 'out',    text: '    link/ether 00:1a:2b:3c:4d:5e brd ff:ff:ff:ff:ff:ff' },
+              { type: 'prompt', text: '$ ifconfig en5' },
+              { type: 'out',    text: 'en5: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500' },
+              { type: 'out',    text: '    ether 00:1a:2b:3c:4d:5e' },
+              { type: 'out',    text: '    inet 192.168.1.50 netmask 0xffffff00 broadcast 192.168.1.255' },
             ],
           },
           {
