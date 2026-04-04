@@ -1,16 +1,15 @@
-# React + Vite
+# Network Panache
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technical blog at [blog.lavoisier.dev](https://blog.lavoisier.dev)
 
-Currently, two official plugins are available:
+Lab walkthroughs, protocol deep dives, and field notes from an IT professional targeting Network & Cloud Security. Built with React + Vite, deployed on Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
+- React + Vite
+- Vercel (auto-deploy from master)
+- Custom domain: blog.lavoisier.dev
 
-## React Compiler
+## Author
+Lavoisier Cornerstone — [lavoisier.dev](https://lavoisier.dev) | [github.com/cornerstonian](https://github.com/cornerstonian)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img width="1116" height="556" alt="image" src="https://github.com/user-attachments/assets/87186eca-36cd-4633-95ef-acc2cad64898" />
