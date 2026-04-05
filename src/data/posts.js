@@ -1,5 +1,172 @@
 export const posts = [
   {
+    slug: 'devlog-april-04-2026',
+    title: 'DEVLOG — APRIL 4, 2026',
+    subtitle: 'Work completed and shipped.',
+    date: 'April 4, 2026',
+    readTime: '~2 min read',
+    category: 'Devlog',
+    difficulty: 'Log',
+    difficultyColor: 'muted',
+    badges: [
+      { label: 'Devlog',          color: 'muted'  },
+      { label: 'CCNA',            color: 'gold'   },
+      { label: 'Wireshark',       color: 'cyan'   },
+      { label: 'Lab Walkthrough', color: 'purple' },
+    ],
+    sections: [
+      {
+        id: 'labs',
+        number: '01',
+        title: 'Labs',
+        content: [
+          {
+            type: 'table',
+            headers: ['Lab', 'Work Completed'],
+            rows: [
+              [
+                'Lab 01 — ARP',
+                'Live capture on physical Cisco hardware · Request/reply field-by-field analysis · TTL fingerprinting · OUI identification · Cache flush and ARP table verification',
+              ],
+              [
+                'Lab 02 — Display Filters',
+                'Protocol isolation · Directional filters · Logical operators · Right-click filter creation · Saved filter library · IGMPv2 multicast and CDP passive device fingerprinting',
+              ],
+              [
+                'Lab 03 — TCP Streams',
+                'ROMMON password recovery · Unknown enable secret trap documented · Fa0/0 vs Fa0/1 interface mismatch diagnosed · Telnet session captured · cisco and cisco123 visible in cleartext TCP stream · Full session transcript: show version, show ip interface brief',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'readmes',
+        number: '02',
+        title: 'Lab READMEs',
+        content: [
+          {
+            type: 'table',
+            headers: ['File', 'Status'],
+            rows: [
+              ['Lab 01 README', 'Rebuilt — 10 screenshots integrated at correct positions'],
+              ['Lab 02 README', 'Complete and shipped'],
+              ['Lab 03 README', 'Written and pushed — four screenshots placed'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'docs',
+        number: '03',
+        title: 'Repo Documentation',
+        content: [
+          {
+            type: 'table',
+            headers: ['Document', 'Changes'],
+            rows: [
+              [
+                'wireshark-traffic-analysis-ccna — root README',
+                'Lab index updated · Labs 01–03 hyperlinked',
+              ],
+              [
+                'netops-ccna-homelab — root README',
+                'Full rewrite · Lab photo and topology diagram rendering',
+              ],
+              [
+                'secure-ccna-lab-integration.md',
+                'Full rewrite · ROMMON recovery · Bus Error troubleshooting · Fa0/1 fix · IOS upgrade decision log · Cisco 1700 discovery · DHCP range corrected 192.168.50.100–149 · Three screenshots placed',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'content',
+        number: '04',
+        title: 'Content',
+        content: [
+          {
+            type: 'table',
+            headers: ['Type', 'Detail'],
+            rows: [
+              ['Blog post', 'Series intro — why physical gear, lab topology, what\'s coming'],
+              ['Blog post', 'ARP and Display Filters — passive discovery, noise reduction, filter methodology'],
+              ['Blog post', 'Telnet cleartext — ROMMON story, TCP stream screenshot, the security argument'],
+              ['LinkedIn post', 'Series announcement — three bullet findings, repo link'],
+              ['LinkedIn post', 'Telnet capture story — leads with credential screenshot moment'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'diagrams',
+        number: '05',
+        title: 'Diagrams',
+        content: [
+          {
+            type: 'table',
+            headers: ['Item', 'Changes'],
+            rows: [
+              [
+                'Homelab topology diagram',
+                'Cisco 1700 added as SSH lab device · MacBook console line extended to both routers · SSH demonstration note added to 2621 config box · Duplicate label removed',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'pushes',
+        number: '06',
+        title: 'Repo Pushes',
+        content: [
+          {
+            type: 'table',
+            headers: ['Repo', 'What Shipped'],
+            rows: [
+              [
+                'wireshark-traffic-analysis-ccna',
+                'All three lab folders · Screenshots · READMEs · Root README',
+              ],
+              [
+                'netops-ccna-homelab',
+                'README · Writeup · Images · Topology — all rendering on GitHub',
+              ],
+              [
+                'cornerstonian (GitHub profile)',
+                'blog.lavoisier.dev added to Web section · links.lavoisier.dev added to Web section',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'hardware',
+        number: '07',
+        title: 'Hardware',
+        content: [
+          {
+            type: 'table',
+            headers: ['Device', 'Status'],
+            rows: [
+              [
+                'Cisco 1700',
+                'Booted and identified · IOS: c1700-advsecurityk9-mz.124-25d.bin · Full crypto support confirmed · SSH ready · Staged for Lab 04',
+              ],
+            ],
+          },
+          {
+            type: 'callout',
+            variant: 'info',
+            heading: 'Next Session',
+            text: 'Lab 04 — SSH configuration on the Cisco 1700, encrypted stream capture in Wireshark, side-by-side comparison with Lab 03 Telnet cleartext capture.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'building-my-physical-ccna-homelab',
     title: 'The End of Simulation: Building a CCNA Lab With Physical Cisco Hardware',
     subtitle:
